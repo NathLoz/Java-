@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Analisis {
+
+    public static void main(String[] args){
+
+        Scanner entrada = new Scanner(System.in);
+
+        //Inicializar variables locales
+        int aprobados = 0;
+        int reprobados = 0;
+        int contadorEstudiantes = 1;
+
+        //Procesa 10 estudiantes, usando ciclo conrolado por contador
+        while(contadorEstudiantes <= 10){
+
+            //Pide al usuario la entrada y obtiene el valor
+            System.out.print("Escriba el resultado (1 = aprobado, 2 = reprobado): ");
+            int resultado = entrada.nextInt();
+
+            //if..else anidado en la instrucción while
+            if(resultado == 1)
+                aprobados = aprobados + 1;
+            else
+                reprobados = reprobados + 1;
+
+            contadorEstudiantes = contadorEstudiantes + 1;
+        }
+
+        //Fase de terminación; prepara y muestra los resultados
+        System.out.printf("Aprobados: %d%nReprobados: %d%n", aprobados, reprobados);
+
+        //Determina si mas de 8 estudiantes aprobaron
+        if(aprobados>8)
+            System.out.println("Bono para el instructor!");
+
+
+    }
+}
